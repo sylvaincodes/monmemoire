@@ -15,24 +15,28 @@ use Illuminate\Support\Facades\Schema;
 */
 
 // Routes pour les visiteurs
-    // namespace = pour la classe
-    // name = nom de la route 
-    // prefixe = url de la route
-Route::group([ 'namespace' => 'Front', 'name' => 'guest' ,'prefix' => '' ] , function(){    
+Route::group([ 'namespace' => 'Front', 'name' => 'page' ,'prefix' => '' ] , function(){    
     Route::get('/','GuestController@home')->name('home');
+    Route::get('/catalogue','GuestController@catalogue')->name('catalogue');
+    Route::get('/documentsCatalogue','GuestController@documentsCatalogue')->name('documentsCatalogue');
+    Route::get('/documentSingle','GuestController@documentSingle')->name('documentSingle');
 });
 
 
 // Routes pour le front
 Route::group([ 'namespace' => 'Front' , 'name' => 'front' ] , function(){
     
-    
     // Routes pour les visiteurs connectés
     Route::group([ 'prefix' => 'front', 'middleware' => 'auth' ] , function(){
-        
+
         Route::group(['middleware'=>'is_user'],function ()
         {
             Route::get('/home', 'HomeController@index')->name('home');
+            Route::get('/profilForm','GuestController@profilForm')->name('profilForm');
+            Route::get('/profilUpdate','GuestController@profilUpdate')->name('profilUpdate');
+            Route::get('/profilUpdate','GuestController@profilUpdate')->name('profilUpdate');
+            Route::get('/showTelechargementsForUser','GuestController@showTelechargementsForUser')->name('showTelechargementsForUser');
+            Route::get('/showDocumentsForUser','GuestController@showDocumentsForUser')->name('showDocumentsForUser');
         });
 
          //ajax Routes

@@ -14,7 +14,7 @@ class ProfilController extends Controller
     | Profil Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles editing profil for users.
+    | This controller handles editing data for users.
     |
     */
 
@@ -30,14 +30,43 @@ class ProfilController extends Controller
     } 
     
     /**
+      * show form edit.
+      *
+     */
+    public function profilForm()
+    {
+        return view('front.forms.profils.editprofil');
+    }
+    
+    /**
      * edit user.
      * @param  \Illuminate\Http\Request  $request
      * @param  User $user
      * @return \Illuminate\Http\Response
      * 
      */
-    public function editprofil()
+    public function profilUpdate($user)
     {
-        
+        // Redirection retour sur la page précédente
+        return redirect()->back();
     }
+
+    /**
+     * show telechargements list.
+     * 
+     */
+    public function showTelechargementsForUser()
+    {
+        return view('front.tables.telechargements.list');
+    }
+    
+    /**
+     * show telechargements list.
+     * 
+     */
+    public function showDocumentsForUser()
+    {
+        return view('front.tables.documents.list');
+    }
+
 }
