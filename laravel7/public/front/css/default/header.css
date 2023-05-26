@@ -1,0 +1,46 @@
+/*--------------------------*/
+/*  HEADER CSS
+/*--------------------------*/
+
+.header-container{
+    padding-inline: var(--padding-inline-40);
+    padding-block: var(--padding-inline-40);
+    box-shadow: var(--shadow);
+    gap: 4rem;
+}
+
+.mobile-nav-toggle i{
+    font-weight: 100;
+}
+
+.logo a{
+    font-weight: bold;
+    color: var(--first-color);
+}
+
+.input-box{
+    border: 1px solid var(--first-color);
+    border-radius: var(--radius-45);
+    position: relative;
+}
+
+.input-box .search-field{
+    padding-inline: var(--padding-inline-20);
+    height: 6rem;
+    font-size: 2.5rem;
+    color: var(--silver) !important;
+    line-height: 4rem;
+}
+.input-box #search-submit{
+    position: absolute;
+    right: 25px;
+    top: 18px;
+}
+.input-box i{
+    color: var(--silver) !important;
+    font-weight: 100;
+}
+.input-box:hover i{
+    color: var(--first-color) !important;
+    font-weight: 900;
+}

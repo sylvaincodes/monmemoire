@@ -1,0 +1,36 @@
+/*--------------------------*/
+/*  FOOTER CSS
+/*--------------------------*/
+#footer{
+    background: var(--third-color);
+}
+
+.footer-container{
+    padding-inline: var(--padding-inline-40);
+    padding-block: var(--padding-inline-40);
+    flex-direction: column;
+    gap: 3rem;
+}
+.footer-container a{
+    color: var(--white_link);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.footer-bottom i{
+    color: var(--white_link) !important;
+    width: 5rem;
+}
+
+.footer-bottom a{
+    width: 10rem;
+    text-align: right;
+}
+
+.footer-top{
+    flex-wrap: nowrap;
+    gap: 2rem;
+}
+.footer-top ul li{
+    padding-bottom: 2rem;
+}

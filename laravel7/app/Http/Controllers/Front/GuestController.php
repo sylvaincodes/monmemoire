@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Front\FrontController;
+use App\Http\Repositories\DocumentRepository;
 
 class GuestController extends FrontController
 {
 
-    public function __construct(){
-
+    public function __construct(DocumentRepository $documentRepository){
+        $this->DocumentRepository =  $documentRepository;
     }
+
 
     /**
      * Show the application front homepage.
@@ -18,7 +20,8 @@ class GuestController extends FrontController
      */
     public function home()
     {   
-        return view('front.pages.welcome');
+        $documents = $this->DocumentRepository->documentDuJour();
+        return view('front.pages.welcome', compact('documents'));
     }
     
     /**

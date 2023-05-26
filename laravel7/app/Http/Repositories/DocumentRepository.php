@@ -16,5 +16,16 @@ class DocumentRepository
         $documents->withPath('/'.$path);
         return $documents;
 	}
+	
+	/**
+	* List des documents du jour
+	*
+	*/
+	public function documentDuJour(){
+		$path=\Route::current()->uri;
+        $documents = Document::paginate(5);
+        $documents->withPath('/'.$path);
+        return $documents;
+	}
 }
 

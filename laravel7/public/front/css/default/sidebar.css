@@ -1,0 +1,32 @@
+/*--------------------------*/
+/*  SIDEBAR CSS
+/*--------------------------*/
+
+.mobile-menu{
+    position:absolute;
+    left:0;
+    top:0;
+    width:80%;
+    height:100%;
+    box-shadow: var(--shadow-2);
+    z-index: 9999;
+    background: var(--white);
+}
+.mobile-menu .header{
+    background: var(--white_bg);
+    padding:var(--padding-inline-40);
+}
+.mobile-menu .content{
+    background: var(--white);
+    padding:var(--padding-inline-40);
+}
+.mobile-menu .add-btn{
+ padding:var(--padding-inline-40);
+ font-size: 3rem;
+ text-transform: capitalize;
+ justify-content: center;
+ gap: 1rem;
+}
+.mobile-menu .add-btn i{
+    color: var(--white) !important;
+}

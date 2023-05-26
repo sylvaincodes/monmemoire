@@ -1,0 +1,29 @@
+
+/* ------------------------
+    - HERO CSS
+--------------------------*/
+
+#hero{
+    background-image: url("https://public.slidesharecdn.com/v2/images/hp_mobile_header.jpg?cb=af36c5d4d5e9e3a0b5d25bdadbfc06869166df99");
+    background-size: cover;
+}
+
+.hero-container{
+    padding-block: var(--padding-block-40);
+    padding-inline: var(--padding-inline-20);
+    color: var(--white);
+    flex-direction: column !important;
+    gap: 3rem;
+    text-align: center;
+}
+
+.hero-container h5{
+    font-weight: 900;
+}
+.hero-container p{
+    font-weight: 100;
+    font-size: var(--fs-6);
+}.hero-container small{
+    font-weight: 100;
+    font-size: var(--fs-8);
+}

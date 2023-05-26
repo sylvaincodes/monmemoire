@@ -1,0 +1,22 @@
+/* -----------------------
+    - STYLESHEET 
+    ------------
+Build by Sylvain adande 
+------------------------- */
+
+/* DEFAULT CSS */
+@import url("./default/animations.css");
+@import url("./default/variables.css");
+@import url("./default/reset.css");
+@import url("./default/custom.css");
+@import url("./default/header.css");
+@import url("./default/hero.css");
+@import url("./default/main.css");
+@import url("./default/card.css");
+@import url("./default/sidebar.css");
+@import url("./default/footer.css");
+
+
+/* RESPONSIVE CSS */
+@import url("./responsive/responsive.css");
+
