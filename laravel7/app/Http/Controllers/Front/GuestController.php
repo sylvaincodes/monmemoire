@@ -12,7 +12,6 @@ class GuestController extends FrontController
         $this->DocumentRepository =  $documentRepository;
     }
 
-
     /**
      * Show the application front homepage.
      *
@@ -31,7 +30,8 @@ class GuestController extends FrontController
      */
     public function catalogue()
     {   
-        return view('front.pages.catalogue');
+        $documents = $this->DocumentRepository->documentDuJour();
+        return view('front.pages.catalogue',compact('documents'));
     }
     
     /**
@@ -39,9 +39,20 @@ class GuestController extends FrontController
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function documentSingle()
+    public function documentSingle($id)
     {   
-        return view('front.pages.documentsingle');
+        $document = $this->DocumentRepository->document($id);
+        return view('front.pages.documentsingle',compact('document'));
+    }
+    
+    /**
+     * download a document.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function uploaddocument()
+    {   
+        return view('front.pages.uploaddocument');
     }
     
     

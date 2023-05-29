@@ -17,7 +17,7 @@
                 </select>
             </form>
         </div>
-        {{-- <hr> --}}
+        <hr>
         <div class="footer-bottom d-flex justify-content-between align-items-center">
                 <p>
                     <a href="">

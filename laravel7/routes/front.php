@@ -19,31 +19,25 @@ Route::group([ 'namespace' => 'Front', 'name' => 'page' ,'prefix' => '' ] , func
     Route::get('/','GuestController@home')->name('home');
     Route::get('/catalogue','GuestController@catalogue')->name('catalogue');
     Route::get('/documentsCatalogue','GuestController@documentsCatalogue')->name('documentsCatalogue');
-    Route::get('/documentSingle','GuestController@documentSingle')->name('documentSingle');
+    Route::get('/documentSingle/{id}','GuestController@documentSingle')->name('documentSingle');
+    Route::get('/uploaddocument','GuestController@uploaddocument')->name('documentSingle');
 });
 
-
 // Routes pour le front
-Route::group([ 'namespace' => 'Front' , 'name' => 'front' ] , function(){
+Route::group([ 'name' => 'front','prefix' => 'front' ] , function(){
     
     // Routes pour les visiteurs connectés
-    Route::group([ 'prefix' => 'front', 'middleware' => 'auth' ] , function(){
+    Route::group([ 'namespace' => 'Front' ,'middleware' => 'auth' ] , function(){
 
         Route::group(['middleware'=>'is_user'],function ()
         {
-            Route::get('/home', 'HomeController@index')->name('home');
-            Route::get('/profilForm','GuestController@profilForm')->name('profilForm');
-            Route::get('/profilUpdate','GuestController@profilUpdate')->name('profilUpdate');
-            Route::get('/profilUpdate','GuestController@profilUpdate')->name('profilUpdate');
-            Route::get('/showTelechargementsForUser','GuestController@showTelechargementsForUser')->name('showTelechargementsForUser');
-            Route::get('/showDocumentsForUser','GuestController@showDocumentsForUser')->name('showDocumentsForUser');
-        });
+            Route::post('/uploaddocument','DocumentController@uploaddocument')->name('documentSingle');
 
-         //ajax Routes
-         Route::group(['prefix'=>'ajax','middleware'=>'is_user'],function ()
-         {
+            //ajax Routes
+            Route::group(['prefix'=>'ajax','middleware'=>'is_user'],function ()
+            {
 
-         });
+            });
 
          // CRUD MODULES ROUES
         //  if (Schema::hasTable('modules')) 
@@ -59,7 +53,19 @@ Route::group([ 'namespace' => 'Front' , 'name' => 'front' ] , function(){
         //                 );
         //         }
         //     }
-    });
+        });
     
+    });
+
+    // Routes pour l'auth
+    Route::group([  'namespace' => 'Auth'  ] , function(){    
+        Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('/profilForm','ProfilController@profilForm')->name('profilForm');
+        Route::get('/profilUpdate','ProfilController@profilUpdate')->name('profilUpdate');
+        Route::get('/mesdocuments','ProfilController@showDocumentsForUser')->name('showDocumentsForUser');
+        Route::get('/mestelechargements','ProfilController@showTelechargementsForUser')->name('showTelechargementsForUser');
+    });
+
+
 });
 

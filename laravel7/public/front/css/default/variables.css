@@ -59,6 +59,8 @@
     --silver:#cfd1dd;
     --white_link:#b4bbd1;
     --white_bg:#f5f6fa;
+    --text-primary:#212240;
+    --bg-primary:#6d7594;
 
 
 
@@ -155,8 +157,8 @@
         *  RESPONSIVE BREAKPOINTS CSS VARIABLES
     */
   
-    --sm-maxwidth : 540px;
-    --md-maxwidth : 740px;
+    --sm-maxwidth : 570px;
+    --md-maxwidth : 760px;
     --lg-maxwidth : 940px;
     --xl-maxwidth : 1140px;
 

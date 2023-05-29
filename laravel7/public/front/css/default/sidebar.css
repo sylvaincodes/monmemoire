@@ -11,22 +11,59 @@
     box-shadow: var(--shadow-2);
     z-index: 9999;
     background: var(--white);
+    transform: translateX(-200%);
 }
 .mobile-menu .header{
     background: var(--white_bg);
-    padding:var(--padding-inline-40);
+    padding:var(--padding-inline-10);
 }
 .mobile-menu .content{
     background: var(--white);
-    padding:var(--padding-inline-40);
+    padding:var(--padding-inline-10);
+    height: 100%;
 }
 .mobile-menu .add-btn{
- padding:var(--padding-inline-40);
+ padding:var(--padding-inline-20);
  font-size: 3rem;
- text-transform: capitalize;
  justify-content: center;
  gap: 1rem;
 }
 .mobile-menu .add-btn i{
     color: var(--white) !important;
+}
+
+nav{
+
+}
+
+.nav-menu{
+}
+.nav-menu.m-t-auto{
+    bottom: 0;
+    position: absolute;
+}
+.nav-item{
+    padding-block: var(--padding-block-10);
+}
+.nav-link{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+.around-avatar{
+    height: 6rem;
+    width: 6rem;
+    border-radius: var(--radius-circle);
+    background: var(--bg-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.around-avatar span{
+   color: var(--white);
+   font-size: 4rem;
+   text-align: center;
 }

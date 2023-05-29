@@ -27,5 +27,14 @@ class DocumentRepository
         $documents->withPath('/'.$path);
         return $documents;
 	}
+	
+	/**
+	* Lire un document
+	*
+	*/
+	public function document($id){
+		$document = document::find($id);
+        return $document;
+	}
 }
 

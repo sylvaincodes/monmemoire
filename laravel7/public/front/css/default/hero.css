@@ -22,8 +22,8 @@
 }
 .hero-container p{
     font-weight: 100;
-    font-size: var(--fs-6);
+    font-size: var(--fs-5);
 }.hero-container small{
     font-weight: 100;
-    font-size: var(--fs-8);
+    font-size: var(--fs-6);
 }

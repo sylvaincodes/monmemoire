@@ -5,30 +5,36 @@
 /* ------------------------------
     - MEDIA QUERY LARGER THAN 575
 --------------------------------*/
-@media (min-width: 575px) {
+@media  screen and (min-width: 575px) {
     .container {
-      max-width: var(--sm-maxwidth);
-      margin: auto;
+      /* max-width: var(--sm-maxwidth); */
     }
   
     html {
-      font-size: 15px;
+      font-size: 9px;
     }
-  
+    
+    
   
   }
   
   /* ------------------------------
         - MEDIA QUERY LARGER THAN 768
     --------------------------------*/
-  @media (min-width: 768px) {
+  @media  screen and (min-width: 768px) {
     .container {
-      max-width: var(--md-maxwidth);
+      /* max-width: var(--md-maxwidth); */
       margin-inline: auto;
+      padding: 2rem;
     }
   
+
+    .card-title{
+        font-size: 2rem !important;
+    }
+
     html {
-      font-size: 16px;
+      font-size: 10px;
     }
     /* Les columns */
     .col-sm-1,
@@ -220,9 +226,17 @@
     }
   
     html {
-      font-size: 16px;
+      font-size: 10px;
     }
   
+    .mobile-hide{
+        display: block;
+    }
+
+    header form{
+        width: max-content !important;
+    }
+
     /* Les columns */
     .col-md-1,
     .col-md-2,
@@ -412,9 +426,17 @@
   
   
     html {
-      font-size: 19px;
+      font-size: 8px;
     }
   
+    header form{
+        width: 500px !important;
+    }
+
+    .mobile-nav-toggle{
+        display: none;
+    }
+
     /* Les columns */
     .col-lg-1,
     .col-lg-2,

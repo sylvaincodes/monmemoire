@@ -1,0 +1,18 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 2rem;
+    color: var(--text-primary);
+}
+.list li{
+    display: flex;
+    justify-content: space-between;
+}
+.list li > span{
+    font-size: var(--fs-5);
+    font-weight: 100;
+    color: var(--text-primary);
+}
+.list li span:nth-child(2){
+    font-size: var(--fs-6);
+}

@@ -9,30 +9,45 @@
     <meta name="robots" content="index, follow"/>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
-
+    <meta name="viewport" content="width=de vice-width, initial-scale=1" />
     {{-- Include core + vendor Styles --}}
     <link type="text/css" rel="stylesheet" href="{{ asset('front/fonts/fonts.css')}}">
     <link type="text/css" rel="stylesheet" href="{{ asset('front/icons/remixicon.css')}}">
     <link type="text/css" rel="stylesheet" href="{{ asset('front/css/style.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('front/libs/toast/toast.min.css')}}"> 
+    <link type="text/css" rel="stylesheet" href="{{ asset('front/libs/autocomplete/easy-autocomplete.css')}}">
+
+    <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
 
 </head>
 <!-- END: Head-->
 
 <body @yield('body-class')>
     
-    @include('front.layouts.partials.header')
+    <div id="page">
 
-    @yield('breadcrumb')
+        @include('front.layouts.partials.sidebar_mobile')
 
-    <main id="page-content">
-        <div class="container">
-           
+        @include('front.layouts.partials.header')
+        
+        @yield('breadcrumb')
+            
+        <main id="page-content">
+            
             @yield('content')
             
-        </div>
-    </main>
+        </main>
 
-    @include('front.layouts.partials.footer')
+        @include('front.layouts.partials.footer')
+
+    </div>
+
+    <script src="{{ asset('front/libs/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('front/libs/toast/toast.js')}}"></script>
+    <script src="{{ asset('front/libs/autocomplete/jquery.easy-autocomplete.js')}}"></script>
+    <script src="{{ asset('front/libs/tooltip/tooltip.js')}}"></script>
+    <script src="{{ asset('front/js/scripts.js')}}"></script>
+    <script src="{{ asset('front/libs/jquery-ui/jquery-ui.js')}}"></script>
 
 </body>
 </html>

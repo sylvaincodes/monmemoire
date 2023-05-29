@@ -16,6 +16,7 @@
     10-Sizes
     11-Icons
     12-Weights
+    13-Dropdowns
 /*------------------------*/
 
 
@@ -72,9 +73,10 @@ input[type="checkbox"]{
 .input-group .field{
     border-bottom : 0.3rem solid var(--first-color);
     color: var(--first-color);
-    border-radius:var(-radius-5);
+    border-radius:var(--radius-5);
     font-weight:900;
     width:100%;
+    font-size: 3rem;
 }
 .input-group .textarea{
     width: -webkit-fill-available;
@@ -146,6 +148,7 @@ select:active,select:focus{
 .input-group .icon-sm{
     position:absolute;
     right:0;
+    bottom:0;
     font-weight:700;
 }
 .input-group .field::-webkit-input-placeholder{
@@ -176,7 +179,6 @@ select:active,select:focus{
 }
 .d-flex{
     display:flex;
-    justify-content: space-between;
 }.d-block{
     display:block;
 }
@@ -214,13 +216,12 @@ select:active,select:focus{
 .btn{
     text-align: center;
     line-height: 2rem;
-    padding: 1.2rem 3rem;
+    padding: 3rem 3rem;
     background: var(--first-color);
     color: white;
     font-weight: 500;
     cursor:pointer;
     position:relative;
-    text-transform:capitalize;
     z-index: 1;
     border :0.1rem solid var(--first-color);
 }
@@ -319,7 +320,9 @@ select:active,select:focus{
 .text-center{
     text-align: center !important;
 }
-
+.text-content{
+    font-size: var(--fs-5);
+}
 
 /* Backgrounds && colors*/
 .bg-white{
@@ -472,7 +475,7 @@ select:active,select:focus{
     width: 50%;
 }
 .col-xs-5 {
-    width: 41.66666667%;
+    width: 46.66666667%;
 }
 .col-xs-4 {
     width: 33.33333333%;
@@ -651,7 +654,9 @@ select:active,select:focus{
 .fs-8{
     font-size:var(--fs-8);
 }
-
+.w-100{
+    width: 100%;
+}
 
 /* Icons */
 .icon-lg{
@@ -690,6 +695,28 @@ select:active,select:focus{
 }
 
 
+/* Dropdown */
+.dropdown:hover{
+    position: relative;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dropdown .dropdown-menu{
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    background: var(--white);
+    padding: 1rem;
+    color: var(--black);
+    right: 0;
+    box-shadow: var(--shadow);
+}
+
+.dropdown .dropdown-menu .nav-item:hover .nav-link{
+    color: var(--first-color);
+}
+
 /* Autres */
 .taux{
 font-style: italic;
@@ -704,10 +731,12 @@ font-size: 1rem;
 
 fieldset{
     padding: 2.5rem;
-    /* color: var(--first-color); */
+    color: var(--text-primary);
     border-radius: 0.1rem;
     border-width: 0.11rem;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 fieldset strong{
@@ -768,3 +797,15 @@ legend{
 
 
 
+iframe {
+   height: 60vh;
+}
+
+.add-online{
+    background: var(--first-color);
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    color: var(--white);
+    border-radius: var(--radius-5);
+    font-size: 2rem;
+}

@@ -2,17 +2,28 @@
 /*  MAIN CSS
 /*--------------------------*/
 
-#page-content{
-    margin-bottom: 3rem;
-}
-
 .container {
     width: 100%;
-    max-width: 100% !important;
+    /* margin-bottom: 34rem; */
+    padding:2rem ;
 }
 
-main .wrapper{
-    margin: 1.5rem;
+#page-content{
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+#page-content .wrapper{
     flex-wrap: wrap;
     gap: 3rem;
+    justify-content: space-between;
+}
+#page-content .wrapper .single-document{
+  flex-direction: column;
+}
+
+.mobile-hide{
+    display: none;
 }

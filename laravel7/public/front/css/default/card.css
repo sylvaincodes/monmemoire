@@ -4,7 +4,6 @@
 
 .card{
     box-shadow : var(--shadow-7);
-    width:100%;
     display:flex;
     flex-direction: column;
 }
@@ -20,10 +19,10 @@
     width: 100%;
 }
 .card .card-desc{
-    font-size: var(--fs-8);
+    font-size: var(--fs-7);
 }
 .card .card-title{
-    font-size: 1.8rem;
+    font-size: 2.8rem;
 }
 .card .card-footer p{
     font-size: var(--fs-6);
