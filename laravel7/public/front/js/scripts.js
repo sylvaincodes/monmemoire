@@ -1,13 +1,35 @@
 $(document).ready(function () {
       
+    /*------------- Side bar menu ---------------*/
     $(".open-menu-btn").click(function () {
       $(".mobile-menu").css("transform", "translateX(0%)");
       $(".mobile-menu").css("transition", "1s");
     });
-    $(".close-menu-btn").click(function () {
+    $(".close-btn").click(function () {
       $(".mobile-menu").css("transform", "translateX(-200%)");
       $(".mobile-menu").css("transition", "0.6s");
     });
+
+    /*------------- Logout form ---------------*/
+    $("#logout-btn,#logout-btn2").click(function () {
+      if (!confirm("Etes vous sûre de vouloir quitter ?")) {
+        return false;
+      }else{
+        document.getElementById('logout-form-back').submit();
+      }
+    });
+
+    //-------- Modal------------//
+    $(".modal-btn").click(function () {
+      $(".modal").css("transform", "scale(1)");
+      $(".modal").css("transition", "0.2s");
+    });
+
+    $(".close-btn").click(function () {
+      $(".modal").css("transform", "translateY(-200%)");
+      $(".modal").css("transition", "0.8s");
+    });
+
 
 });
 
@@ -26,3 +48,5 @@ $(window).scroll(function () {
       $("#header").removeClass('fixed')
     }
 });
+
+

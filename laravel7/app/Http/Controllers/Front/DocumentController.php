@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
 use App\Models\Document;
+use App\Http\Controllers\Front\FrontController;
 use Illuminate\Http\Request;
 
-class DocumentController extends Controller
+class DocumentController extends FrontController
 {
     /**
      * Display a listing of the resource.

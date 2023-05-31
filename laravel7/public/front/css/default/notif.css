@@ -1,0 +1,11 @@
+/*--------------------------*/
+/*  NOTIFICATION CSS
+/*--------------------------*/
+
+.notification{
+    font-size: 2rem;
+    z-index: 9999;
+}
+.d-none{
+    display:none;
+}

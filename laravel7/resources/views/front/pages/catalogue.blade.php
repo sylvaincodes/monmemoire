@@ -5,7 +5,7 @@
 @section('breadcrumb')
     @component('front.layouts.components.breadcrumb')
         @slot('titre')
-        ------------ Explorer -------------
+        ------------ Explorez -------------
         @endslot
         @slot('description')
         Découvrer les documents en fonction de vos centres d'intérêt.

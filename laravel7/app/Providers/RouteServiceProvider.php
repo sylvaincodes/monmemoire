@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/front/home';
     public const BACKHOME = '/back/home';
     public const FRONTHOME = '/front/home';
 
@@ -60,18 +60,18 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-            Route::middleware('web')
-                ->namespace($this->namespace) // need to add in Laravel 8
-                ->group(base_path('routes/back.php'));
+        Route::middleware('web')
+            ->namespace($this->namespace) // need to add in Laravel 8
+            ->group(base_path('routes/back.php'));
 
-            Route::middleware('web')
-                ->namespace($this->namespace) // need to add in Laravel 8
-                ->group(base_path('routes/front.php'));
+        Route::middleware('web')
+            ->namespace($this->namespace) // need to add in Laravel 8
+            ->group(base_path('routes/front.php'));
 
-            // Route::prefix('api')
-            Route::middleware('api')
-                ->namespace($this->namespace) // need to add in Laravel 8
-                ->group(base_path('routes/api.php'));
+        // Route::prefix('api')
+        Route::middleware('api')
+            ->namespace($this->namespace) // need to add in Laravel 8
+            ->group(base_path('routes/api.php'));
     }
 
     /**
@@ -84,8 +84,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+            ->middleware('api')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
     }
 }

@@ -9,7 +9,7 @@
 }
 
 .hero-container{
-    padding-block: var(--padding-block-40);
+    padding-block: var(--padding-block-10);
     padding-inline: var(--padding-inline-20);
     color: var(--white);
     flex-direction: column !important;
@@ -19,6 +19,7 @@
 
 .hero-container h5{
     font-weight: 900;
+    font-size: 3rem;
 }
 .hero-container p{
     font-weight: 100;

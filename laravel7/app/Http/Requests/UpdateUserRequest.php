@@ -24,24 +24,24 @@ class UpdateUserRequest extends FormRequest
      */
     public function rules()
     {
-        $user= $this->route('user');
+        $user = $this->route('user');
         return [
-            'email'=> 'required|max:191|unique:users,email',Rule::unique('users')->ignore($user->id),
-            'type'=> 'required',
-            'nom'=> 'present|alpha|max:191',
-            'prenom'=> 'present|alpha|max:191',
-            'adresse'=> 'present|string|max:191',
-            'telephone'=> 'present|string|max:191',
-            'filiere'=> 'present|string|max:191',
-            'matricule'=> 'present|string|max:191',
-            'whatsapp'=> 'present|string|max:191',
-            'is_verified'=> 'nullable',
-            'email_verified_at'=> 'nullable',
-            'password'=> 'required|confirmed' //confirmed : password_confirmation must be present 
+            'email' => 'nullable|max:191|unique:users,email', Rule::unique('users')->ignore($user->id),
+            'type' => 'nullable',
+            'nom' => 'nullable|alpha|max:191',
+            'prenom' => 'nullable|alpha|max:191',
+            'adresse' => 'nullable|string|max:191',
+            'telephone' => 'nullable|string|max:191',
+            'filiere' => 'nullable|string|max:191',
+            'matricule' => 'nullable|string|max:191',
+            'whatsapp' => 'nullable|string|max:191',
+            'is_verified' => 'nullable',
+            'email_verified_at' => 'nullable',
+            'password' => 'nullable|confirmed' //confirmed : password_confirmation must be nullable 
         ];
     }
 
-     /**
+    /**
      * Get custom attributes for validator errors.
      *
      * @return array
@@ -49,18 +49,18 @@ class UpdateUserRequest extends FormRequest
     public function attributes()
     {
         return [
-            'email'=> 'Adresse email',
-            'type'=> 'Type',
-            'nom'=> 'Nom',
-            'prenom'=> 'Prénom',
-            'adresse'=> 'Adresse',
-            'telephone'=> 'Téléphone',
-            'filiere'=> 'Filère',
-            'matricule'=> 'Matricule',
-            'whatsapp'=> 'Whatsapp',
-            'is_verified'=> 'Est vérifié',
-            'email_verified_at'=> 'Est vérifié à',
-            'password'=> 'Mot de passe'
+            'email' => 'Adresse email',
+            'type' => 'Type',
+            'nom' => 'Nom',
+            'prenom' => 'Prénom',
+            'adresse' => 'Adresse',
+            'telephone' => 'Téléphone',
+            'filiere' => 'Filère',
+            'matricule' => 'Matricule',
+            'whatsapp' => 'Whatsapp',
+            'is_verified' => 'Est vérifié',
+            'email_verified_at' => 'Est vérifié à',
+            'password' => 'Mot de passe'
         ];
     }
 }

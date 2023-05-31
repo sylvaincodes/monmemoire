@@ -17,6 +17,7 @@
     11-Icons
     12-Weights
     13-Dropdowns
+    14-Row
 /*------------------------*/
 
 
@@ -28,6 +29,7 @@ input{
     line-height:3rem;
     font-size: 1rem;
     width: 100%;
+    cursor: pointer;
 }
 select{
     padding: 1rem;
@@ -76,7 +78,8 @@ input[type="checkbox"]{
     border-radius:var(--radius-5);
     font-weight:900;
     width:100%;
-    font-size: 3rem;
+    font-size: 2rem;
+    padding-inline-end: 3rem;
 }
 .input-group .textarea{
     width: -webkit-fill-available;
@@ -135,6 +138,7 @@ select:active,select:focus{
 
 .input-group .label-file{
     padding-inline-start: 1rem;
+    width:100%;
 }
 
 .input-group .form-control{
@@ -148,7 +152,7 @@ select:active,select:focus{
 .input-group .icon-sm{
     position:absolute;
     right:0;
-    bottom:0;
+    top:0;
     font-weight:700;
 }
 .input-group .field::-webkit-input-placeholder{
@@ -177,6 +181,9 @@ select:active,select:focus{
     flex-direction:row;
     gap:1rem;
 }
+.z-i-0{
+    z-index: -1;
+}
 .d-flex{
     display:flex;
 }.d-block{
@@ -193,7 +200,6 @@ select:active,select:focus{
 }
 .flex-row{
     display:flex;
-    align-items:center;
     gap:0.5rem;
 }
 .flex-column{
@@ -231,7 +237,7 @@ select:active,select:focus{
 } */
 
 .btn-outline{
-    padding: 0 1rem !important;
+    padding: 1rem 1rem !important;
 }
 
 .btn-outline:hover{
@@ -323,6 +329,9 @@ select:active,select:focus{
 .text-content{
     font-size: var(--fs-5);
 }
+.py-1{
+    padding-block: 1rem;
+}
 
 /* Backgrounds && colors*/
 .bg-white{
@@ -330,6 +339,9 @@ select:active,select:focus{
 } 
 .bg-primary{
     background:var(--first-color);
+} 
+.text-primary{
+    color:var(--first-color);
 } 
 .text-black{
     color:black;
@@ -795,6 +807,16 @@ legend{
     animation: right_to_left 0.5s ease;
 }
 
+/* Help error */
+.help-block{
+    font-size: 2rem;
+    color: red;
+    font-weight: bolder;
+}
+
+.is-invalid{
+    border-bottom: 0.3rem solid red !important;
+}
 
 
 iframe {
@@ -807,5 +829,27 @@ iframe {
     padding-inline: 2rem;
     color: var(--white);
     border-radius: var(--radius-5);
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+.btn{
+    background: var(--first-color);
+    padding-block: 1.5rem;
+    padding-inline: 2rem;
+    color: var(--white);
+    border-radius: var(--radius-5);
+    font-size: 1.5rem;
+}
+
+.btn-outline{
+    background: var(--white_a15) !important;
+    color: black;
+    border: none;
+    padding-block: 2.5rem;
+}
+
+/* Rows */
+.row{
+    display: flex;
+    flex-direction: row;
 }

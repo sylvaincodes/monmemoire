@@ -18,7 +18,7 @@ Auth::routes();
 
 
 // Routes pour les administrateurs
-Route::group([ 'namespace' => 'Back' , 'prefix' => 'back' , 'name' => 'back' ,'middleware' => 'is_admin'  ] , function(){
+Route::group([ 'namespace' => 'Back' , 'prefix' => 'back' , 'as' => 'back.' ,'middleware' => 'is_admin'  ] , function(){
     
     // Routes pour les administrateurs connectés
     Route::group([ 'middleware' => 'auth'  ] , function(){
@@ -26,5 +26,7 @@ Route::group([ 'namespace' => 'Back' , 'prefix' => 'back' , 'name' => 'back' ,'m
         Route::get('/home', 'HomeController@index')->name('home');
     
     });
+
+    Route::resource('users',UserController::class);
 
 });

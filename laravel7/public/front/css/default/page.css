@@ -1,3 +1,7 @@
+/*--------------------------*/
+/*  PAGE CSS
+/*--------------------------*/
+
 #page{
     width:100vw;
     height:100vh;
@@ -5,7 +9,7 @@
 
 .form-container{
     width: 100%;
-    padding-block: 8rem;
+    padding-block: 4rem;
     padding-inline: 9rem;
 }
 
@@ -14,7 +18,7 @@
     flex-direction:column;
     align-items: center;
     justify-content:center;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .form-container .input-group{
@@ -22,7 +26,7 @@
 }
 
 .form-container .label{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .bottom{
@@ -35,4 +39,8 @@
 #remember-container{
     display: flex;
 
+}
+
+#search-box{
+    display: none;
 }

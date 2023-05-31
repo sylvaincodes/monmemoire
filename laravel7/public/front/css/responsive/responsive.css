@@ -2,6 +2,15 @@
 /* - RESPONSIVE CSS -
 ***********************************/
 
+
+/* 
+ * extra small ( less than 767px )
+ * Small (768px than 991px)
+ * Medium (992px to 1200px)
+ * Large (1200 and larger) 
+*/
+
+
 /* ------------------------------
     - MEDIA QUERY LARGER THAN 575
 --------------------------------*/
@@ -10,12 +19,52 @@
       /* max-width: var(--sm-maxwidth); */
     }
   
+    /* header */
+    .header-container .search-container {
+        display:none;
+    }
+
+    header .header-right{
+        display: flex !important;
+    }
+
+    .header-container .logo{
+        display: block !important;
+    }
+  
+    #search-box{
+        display: block;
+    }
+    
+    #search-box .search-box-container{
+        background: var(--first-color);
+        margin: 2rem;
+        padding: 2rem;
+        border-radius: var(--radius-5);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: var(--white);
+        gap: 2rem;
+    }
+     
+    #search-box .search-box-container h1{ 
+       font-size: 3rem;
+    }
+
+    #search-box .search-box-container form{ 
+        background: #ffffff;
+        z-index: auto;
+    }
+    #search-box .search-box-container .input-box{ 
+        border: 1px solid var(--radius-5);
+    }
+
     html {
       font-size: 9px;
     }
-    
-    
-  
+
   }
   
   /* ------------------------------
@@ -27,8 +76,11 @@
       margin-inline: auto;
       padding: 2rem;
     }
-  
 
+    .header-container .search-container {
+        display:none;
+    }
+  
     .card-title{
         font-size: 2rem !important;
     }
@@ -228,8 +280,21 @@
     html {
       font-size: 10px;
     }
-  
-    .mobile-hide{
+   
+    /* header */
+
+    #search-box{
+        display: none;
+    }
+    .header-container .search-container {
+        display: block;
+    }
+    
+    .mobile-nav-toggle{
+        display: none;
+    }
+
+    .desktop-menu{
         display: block;
     }
 

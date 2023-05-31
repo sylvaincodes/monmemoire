@@ -39,7 +39,7 @@
     --dark-black: rgb(33, 42, 47);
     --radical-red: hsl(346, 100%, 58%);
     --white_a9: hsla(0, 0%, 100%, 0.09);
-    --white_a15: hsla(0, 0%, 100%, 0.15);
+    --white_a15: hsla(0, 1%, 30%, 0.15);
     --white_a25: hsla(0, 0%, 100%, 0.25);
     --white_a50: hsla(0, 0%, 100%, 0.5);
     --white_a70: hsla(0, 0%, 100%, 0.7);

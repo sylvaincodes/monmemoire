@@ -28,8 +28,9 @@ class CreateUsersTable extends Migration
             $table->boolean('is_verified')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->foreignId('piece_id')->nullable()->constrained()->onDelete('cascade');
-            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('created_by')->nullable();
             $table->string('status')->default('actif');
+            $table->boolean('is_logged')->default(false);
             $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
