@@ -25,7 +25,7 @@ class CreateDocumentsTable extends Migration
             $table->string('preuve');
             $table->string('status')->default('enattente');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('catalogue_id')->constrained()->onDelete('cascade');
+            $table->foreignId('filiere_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

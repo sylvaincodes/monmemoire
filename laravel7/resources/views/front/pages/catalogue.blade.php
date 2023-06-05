@@ -11,7 +11,6 @@
         Découvrer les documents en fonction de vos centres d'intérêt.
         @endslot
         @slot('soustitre')
-        
         @endslot
     @endcomponent
 @endsection
@@ -20,47 +19,25 @@
     <div class="container">        
         <div class="wrapper d-flex">
             
-            <a href="{{ url('documentsCatalogue') }}" class="card col-xs-5 col-lg-4">
-                <div class="card-header">
-                    <img src="https://public.slidesharecdn.com/v2/images/categories/1x/career.png" alt="image document">
-                </div>
-                <div class="card-content">
-                    <h1 class="card-title">Informatique de gestion</h1>
-                </div>
-                <hr>
-            </a>  
+            @foreach ($filieres as $item)
+                
+                <a href="{{ url('documentsCatalogue', $item->id) }}" class="card col-xs-5 col-lg-4">
+                    <div class="card-header">
+                        <img src="https://public.slidesharecdn.com/v2/images/categories/1x/career.png" alt="image document">
+                    </div>
+                    <div class="card-content">
+                        <h1 class="card-title">{{ trim($item->libelle)}}</h1>
+                    </div>
+                    <hr>
+                </a>  
             
-            <a href="{{ url('documentsCatalogue') }}" class="card col-xs-5 col-lg-4">
-                <div class="card-header">
-                    <img src="https://public.slidesharecdn.com/v2/images/categories/1x/featured.png" alt="image document">
-                </div>
-                <div class="card-content">
-                    <h1 class="card-title">Markéting action commercial</h1>
-                </div>
-                <hr>
-            </a>
-               
-            <a href="{{ url('documentsCatalogue') }}" class="card col-xs-5 col-lg-4">
-                <div class="card-header">
-                    <img src="https://public.slidesharecdn.com/v2/images/categories/1x/latest.png" alt="image document">
-                </div>
-                <div class="card-content">
-                    <h1 class="card-title">Resources humaines</h1>
-                </div>
-                <hr>
-            </a>
-
-            <a href="{{ url('documentsCatalogue') }}" class="card col-xs-5 col-lg-4">
-                <div class="card-header">
-                    <img src="https://public.slidesharecdn.com/v2/images/categories/1x/popular.png" alt="image document">
-                </div>
-                <div class="card-content">
-                    <h1 class="card-title">Commerce international</h1>
-                </div>
-                <hr>
-            </a>  
-
-            {{ $documents->links('front.layouts.components.pagination') }}
+            @endforeach
+           
         </div>
+
+        <div class="d-flex justify-content-center py-3">
+                {{ $filieres->links('front.layouts.components.pagination') }}
+        </div>
+
     </div>
 @endsection

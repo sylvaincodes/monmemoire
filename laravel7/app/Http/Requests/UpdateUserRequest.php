@@ -14,7 +14,11 @@ class UpdateUserRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        if (\Auth::user()->type == "superadmin" || \Auth::user()->type == "admin") {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -26,17 +30,15 @@ class UpdateUserRequest extends FormRequest
     {
         $user = $this->route('user');
         return [
-            'email' => 'nullable|max:191|unique:users,email', Rule::unique('users')->ignore($user->id),
+            'email' => ['required|max:191', Rule::unique('users')->ignore($user)],
             'type' => 'nullable',
             'nom' => 'nullable|alpha|max:191',
             'prenom' => 'nullable|alpha|max:191',
             'adresse' => 'nullable|string|max:191',
-            'telephone' => 'nullable|string|max:191',
-            'filiere' => 'nullable|string|max:191',
-            'matricule' => 'nullable|string|max:191',
-            'whatsapp' => 'nullable|string|max:191',
-            'is_verified' => 'nullable',
-            'email_verified_at' => 'nullable',
+            'telephone' => 'nullable|digits:8|max:191|unique:users,telephone,' . $user->id,
+            'filiere_id' => 'nullable|max:191',
+            'matricule' => 'nullable|string|max:191|unique:users,telephone', Rule::unique('users')->ignore($user->id),
+            'whatsapp' => 'nullable|digits:8|max:191|unique:users,telephone', Rule::unique('users')->ignore($user->id),
             'password' => 'nullable|confirmed' //confirmed : password_confirmation must be nullable 
         ];
     }

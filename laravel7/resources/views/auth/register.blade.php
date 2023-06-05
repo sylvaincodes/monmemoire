@@ -25,48 +25,36 @@ Entrer vos informations pour continuer.
         <input type="hidden" value="0 " name="created_by"/>
         
         <label class="input-group">
-            <input id="email" type="text" class="field @error('email') is-invalid @enderror" placeholder="email" required name="email" autocomplete="off" aria-invalid="@error('email') true @enderror">
+            <input value="{{old('email') ? old('email') : ""}}" id="email" type="text" class="field @error('email') is-invalid @enderror" placeholder="email" required name="email" autocomplete="off" aria-invalid="@error('email') true @enderror">
             <span class="label">Email</span>
             <i  class="icon-sm ri-user-line"></i>
             @error('email')
-            <div class="help-block">
-                <ul role="alert">
-                    @if ($errors->has('email'))
-                    <li>{{ $errors->first('email') }}.</li>
-                    @endif
-                </ul>
-            </div>
-            @enderror
+              <div class="p-0 m-0 alert danger">
+                @if ($errors->has('email'))
+                {{ $errors->first('email') }}.
+                @endif
+              </div>
+              @enderror
         </label>
         
         <label class="input-group">
-            <input id="password" class="field @error('password') is-invalid @enderror" placeholder="mot de passe" required name="password" type="password"  />
+            <input value="{{old('password') ? old('password') : ""}}" id="password" class="field @error('password') is-invalid @enderror" placeholder="mot de passe" required name="password" type="password"  />
             <span class="label">mot de passe</span>
             <i class="icon-sm ri-lock-line"></i>
-            @error('name')
-            <div class="help-block">
-                <ul role="alert">
-                    @if ($errors->has('password'))
-                    <li>{{ $errors->first('password') }}.</li>
-                    @endif
-                </ul>
-            </div>
-            @enderror
+            @error('password')
+              <div class="p-0 m-0 alert danger">
+                @if ($errors->has('password'))
+                {{ $errors->first('password') }}.
+                @endif
+              </div>
+              @enderror
         </label>
         
         <label class="input-group @error('password_confirmation') is-invalid @enderror">
-            <input id="password_confirmation" value="" class="field" placeholder="confirmer mot de passe" required name="password_confirmation" type="password"  />
+            <input value="{{old('password_confirmation') ? old('password_confirmation') : ""}}" id="password_confirmation" value="" class="field" placeholder="confirmer mot de passe" required name="password_confirmation" type="password"  />
             <span class="label">confirmer mot de passe</span>
             <i class="icon-sm ri-lock-line"></i>
-            @error('name')
-            <div class="help-block">
-                <ul role="alert">
-                    @if ($errors->has('password'))
-                    <li>{{ $errors->first('password') }}.</li>
-                    @endif
-                </ul>
-            </div>
-            @enderror
+            
         </label>
         
         <div class="input-group m-auto">

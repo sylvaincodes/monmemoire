@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('type', ['internaute', 'admin','superadmin'])->default('internaute');
+            $table->enum('type', ['internaute', 'admin', 'superadmin'])->default('internaute');
             $table->string('nom')->nullable();
             $table->string('prenom')->nullable();
             $table->string('adresse')->nullable();
@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('whatsapp')->nullable();
             $table->boolean('is_verified')->default(false);
             $table->timestamp('email_verified_at')->nullable();
-            $table->foreignId('piece_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('filiere_id')->nullable()->constrained()->onDelete('cascade');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->string('status')->default('actif');
             $table->boolean('is_logged')->default(false);

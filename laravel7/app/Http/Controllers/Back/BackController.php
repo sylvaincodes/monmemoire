@@ -10,4 +10,13 @@ use Illuminate\Routing\Controller as BaseController;
 class BackController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    function storage()
+    {
+        \Artisan::call('storage:link');
+
+        notify()->success(__('messages.filesysteme_actived'), __('alerts.success_title'));
+
+        return redirect()->back();
+    }
 }

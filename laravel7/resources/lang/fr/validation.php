@@ -104,7 +104,7 @@ return [
     'required_without' => 'Le champ :attribute est obligatoire quand :values is not present.',
     'required_without_all' => 'Le champ :attribute est obligatoire quand none of :values are present.',
     'same' => 'Le champ :attribute et :other must match.',
-    'size' => [
+    'size' => [ 
         'numeric' => 'Le champ :attribute doit être :size.',
         'file' => 'Le champ :attribute doit être :size kilobytes.',
         'string' => 'Le champ :attribute doit être :size caractères.',
@@ -113,8 +113,8 @@ return [
     'starts_with' => 'Le champ :attribute must start with one of the following: :values.',
     'string' => 'Le champ :attribute doit être a string.',
     'timezone' => 'Le champ :attribute doit être a valid zone.',
-    'unique' => 'Le champ :attribute has est déja disponible.',
-    'uploaded' => 'Le champ :attribute failed to upload.',
+    'unique' => 'Le champ :attribute existe déja.',
+    'uploaded' => 'Le champ :attribute a échoué.',
     'url' => 'Le format du champ :attribute n\'est pas valide.',
     'uuid' => 'Le champ :attribute doit être a valid UUID.',
 

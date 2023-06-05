@@ -8,7 +8,7 @@
 ------------ CONNEXION -------------
 @endslot
 @slot('description')
-Connecter vous à votre compte pour continuer.
+Connectez-vous à votre compte pour continuer.
 @endslot
 @slot('soustitre')
 @endslot
@@ -17,37 +17,33 @@ Connecter vous à votre compte pour continuer.
 
 @section('content')
 
-<div class="form-container col-md-10 col-lg-5">
+<div class="needs-validation form-container col-md-10 col-lg-5">
     <form method="post" action="{{ url('login') }}">
         @csrf
         <label class="input-group">
-            <input id="email" type="email" class="field  @error('email') is-invalid @enderror" placeholder="email" required name="email" autocomplete="off">
+            <input value="{{old('email') ? old('email') : ""}}" id="email" type="email" class="field  @error('email') is-invalid @enderror" placeholder="email" required name="email" autocomplete="off">
             <span class="label">nom d'utilisateur</span>
             <i  class="icon-sm ri-user-line"></i>
             @error('email')
-            <div class="help-block">
-                <ul role="alert">
-                    @if ($errors->has('email'))
-                    <li>{{ $errors->first('email') }}.</li>
-                    @endif
-                </ul>
-            </div>
-            @enderror
+              <div class="p-0 m-0 alert danger">
+                @if ($errors->has('email'))
+                {{ $errors->first('email') }}.
+                @endif
+              </div>
+              @enderror
         </label>
         
         <label class="input-group">
-            <input id="password" value="" class="field  @error('password') is-invalid @enderror" placeholder="mot de passe" required name="password" type="password"  />
+            <input value="{{old('password') ? old('password') : ""}}" id="password" value="" class="field  @error('password') is-invalid @enderror" placeholder="mot de passe" required name="password" type="password"  />
             <span class="label">mot de passe</span>
             <i class="icon-sm ri-lock-line"></i>
             @error('password')
-            <div class="help-block">
-                <ul role="alert">
-                    @if ($errors->has('password'))
-                    <li>{{ $errors->first('password') }}.</li>
-                    @endif
-                </ul>
-            </div>
-            @enderror
+              <div class="p-0 m-0 alert danger">
+                @if ($errors->has('password'))
+                {{ $errors->first('password') }}.
+                @endif
+              </div>
+              @enderror
         </label>
         
         {{-- <div id="remember-container">

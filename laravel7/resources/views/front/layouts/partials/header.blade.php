@@ -5,12 +5,16 @@
             <button class="mobile-nav-toggle">
                 <i class="open-menu-btn icon-md ri-menu-line"></i>
             </button>
-            <a class="logo" href="{{url('/')}}">
-                Monmemoire
+            <a class="d-flex flex-row logo" href="{{route('page.home')}}">
+                <img class="" width="45" height="45" src="<?php echo asset('back/images/logo/logo.jpg'); ?>" alt="avatar">
+                <span class="logo-text">
+    
+                    bibliothèque
+                </span>
             </a>
             <nav class="mobile-hide desktop-menu">
                 <ul class="nav-menu">
-                    <li class="nav-item"><a class="nav-link" href="{{url('/')}}">Acceuil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('page.home')}}">Acceuil</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{url('/catalogue')}}">Explorer</a></li>
                 </ul>
             </nav>
@@ -18,7 +22,8 @@
         
         <form class="search-container w-100 " action="" method="post" >
             <div class="input-box d-flex">
-                <input type="text" class="search-field"  placeholder="Que recherchez vous ?"/>
+                <input type="hidden" name="document_id" class="d-block document_id" id="document_id" placeholder="document_id"/>
+                <input type="text" id="document" class="search-field"  placeholder="Que recherchez vous ?"/>
                 <button type="submit" id="search-submit">
                     <i class="icon-sm ri-search-2-line"></i>
                 </button>
@@ -26,7 +31,7 @@
         </form>
         
         <div class="header-right">
-            <a class="add-online" href="{{url('uploaddocument')}}" class="add-btn">
+            <a class="add-online" href="{{route('front.uploaddocument')}}" class="add-btn">
                 <span>Mettre en ligne</span>
             </a>
             
@@ -52,6 +57,8 @@
                                 </span> 
                             </a>
                         </li>
+
+                        @internaute
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/front/mesdocuments')}}">
                                 <i class="ri-file-line"></i>
@@ -68,6 +75,8 @@
                                 </span> 
                             </a>
                         </li>
+
+                        @endinternaute
                         <li class="nav-item">
                             <a class="nav-link" id="logout-btn2">
                                 <i class="ri-logout-box-line"></i>

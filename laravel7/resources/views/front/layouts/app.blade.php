@@ -48,9 +48,9 @@
 
     <script src="{{ asset('front/libs/jquery/jquery.min.js')}}"></script>
     <script src="{{ asset('front/libs/toast/toast.js')}}"></script>
-    <script src="{{ asset('front/libs/autocomplete/jquery.easy-autocomplete.js')}}"></script>
     <script src="{{ asset('front/libs/tooltip/tooltip.js')}}"></script>
     <script src="{{ asset('front/js/scripts.js')}}"></script>
+    <script src="{{ asset('front/libs/autocomplete/jquery.easy-autocomplete.js')}}"></script>
     <script src="{{ asset('front/js/autocomplete.js')}}"></script>
     <script src="{{ asset('front/libs/jquery-ui/jquery-ui.js')}}"></script>
     @notifyJs

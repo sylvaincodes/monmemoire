@@ -36,11 +36,14 @@ class User extends Authenticatable
         'prenom',
         'adresse',
         'telephone',
-        'filiere',
+        'filiere_id',
         'matricule',
         'whatsapp',
         'password',
         'is_verified',
+        'type',
+        'avatar',
+        'created_by'
     ];
 
     /**
@@ -49,7 +52,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -66,11 +70,19 @@ class User extends Authenticatable
     /**
      * Get the documents for user auth.
      */
+    public function filiere()
+    {
+        return $this->belongsTo('App\Models\Filiere');
+    }
+
+    /**
+     * Get the documents for user auth.
+     */
     public function documents()
     {
         return $this->hasMany('App\Models\Document');
     }
-    
+
     /**
      * Get the documents for user auth.
      */

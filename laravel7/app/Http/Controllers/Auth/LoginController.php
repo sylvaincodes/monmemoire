@@ -48,11 +48,11 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-            // Notification view
-            notify()->success(__('alerts.welcome', ['name' => $user->email]) , __('alerts.success_title'));
+        // Notification view
+        notify()->success(__('alerts.welcome', ['name' => $user->email]), __('alerts.success_title'));
 
-            //logging
-            \Log::channel('front')->info(__('messages.userlogged'), ['user_id' => $user->id]);
+        //logging
+        \Log::channel('front')->info(__('messages.userlogged'), ['user_id' => $user->id]);
 
 
     }
@@ -70,12 +70,18 @@ class LoginController extends Controller
 
         $this->validateLogin($request);
 
-        // $userLogin=DB::table('users')
-        // ->where('email', $request->email)
-        // ->where('is_logged', 1)
-        // ->first();
+        $userAttempt = \DB::table('users')
+            ->where('email', $request->email)
+            ->first();
 
 
+        if ($userAttempt){
+            if ($userAttempt->status == "inactif") {
+            // Notification view
+            notify()->success(__('messages.userbanned'), __('alerts.error_title'));
+            return redirect()->back();
+            }
+        }
 
         // if (!empty($userLogin->name)) {
         // // notify()->info(__('alerts.alreadylogged', ['name' => $userLogin->name]) , __('alerts.info_title'));
@@ -85,8 +91,10 @@ class LoginController extends Controller
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
-        if (method_exists($this, 'hasTooManyLoginAttempts') &&
-        $this->hasTooManyLoginAttempts($request)) {
+        if (
+            method_exists($this, 'hasTooManyLoginAttempts') &&
+            $this->hasTooManyLoginAttempts($request)
+        ) {
 
             $this->fireLockoutEvent($request);
 
@@ -95,24 +103,24 @@ class LoginController extends Controller
 
         // Traitement du checkbox remember me
         if ($request->has('remember')) {
-            if ($request->remember=="on") {
-                $remember=1;
-            }else{
-                $remember=0;
+            if ($request->remember == "on") {
+                $remember = 1;
+            } else {
+                $remember = 0;
             }
-        }else {
-            $remember=false;
+        } else {
+            $remember = false;
         }
 
-        if ($this->attemptLogin($request,$remember)) {
+        if ($this->attemptLogin($request, $remember)) {
 
             if ($request->hasSession()) {
                 $request->session()->put('loggedAt', time());
-                $user= \Auth::user();
+                $user = \Auth::user();
 
                 \DB::table('users')
-                ->where('id', $user->id)
-                ->update(['is_logged' => 1]);
+                    ->where('id', $user->id)
+                    ->update(['is_logged' => 1]);
 
             }
             return $this->sendLoginResponse($request);
@@ -124,13 +132,13 @@ class LoginController extends Controller
         $this->incrementLoginAttempts($request);
 
         // Notification view
-        notify()->error(__('alerts.error_login') , __('alerts.error_title'));
+        notify()->error(__('alerts.error_login'), __('alerts.error_title'));
 
         return $this->sendFailedLoginResponse($request);
 
     }
 
-     /**
+    /**
      * The user has logged out of the application.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -138,7 +146,8 @@ class LoginController extends Controller
      */
     protected function loggedOut(Request $request)
     {
-         // Notification view
-         notify()->error(__('auth.loggout_success') , __('alerts.success_title'));
+        // Notification view
+        notify()->error(__('auth.loggout_success'), __('alerts.success_title'));
+        
     }
 }

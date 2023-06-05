@@ -1,0 +1,58 @@
+.row.header{
+    margin: 0;
+    padding-inline: 1rem;
+}
+
+.card-header .row{
+    padding-left: 1.5rem;
+}
+
+.icon-md{
+    font-size: 3rem;
+    color: black;
+}
+th{
+    text-transform: capitalize;
+}
+
+.protected{
+    opacity: 0.1;
+}
+
+i,a{
+    cursor: pointer;
+}
+td {
+    padding-block: 2rem;
+}
+.document-status{
+    font-size: 3rem;
+    color: black;
+    position: absolute;
+    transform: rotateZ(-45deg);
+    top: 35%;
+    bottom: 50%;
+    left: 10%;
+    font-weight: bolder;
+    letter-spacing: 2rem;
+}
+
+.easy-autocomplete{
+    width: 100% !important;
+    border: 1px solid silver;
+    padding-block: 0.1rem;
+}
+.easy-autocomplete input{
+    width: 100% !important;
+    padding: 0.8rem;
+    border: none;
+    outline: none;
+}
+
+.text-dashboard{
+    display: flex;
+    font-size: 4rem;
+    justify-content: center;
+    font-weight: bolder;
+    align-items: center;
+}

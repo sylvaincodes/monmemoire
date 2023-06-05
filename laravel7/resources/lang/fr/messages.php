@@ -60,8 +60,12 @@ return [
     'social' => 'Réseaux sociaux',
     'userlogged' => 'Connexion à la plateforme réussi',
     'activity' => 'Activité',
+    'create' => 'Création',
+    'success_update' => 'Mise à jour effetuée avec succès',
+    'userbanned' => 'Votre compte est banni, contactez le service client pour en savoir plus.',
 
     'search' => 'Recherche ici',
+    'filesysteme_actived' => 'Le systéme de fichier est activé .',
     'keywords' => 'Maximum 15 Lettres séparés par des virgules',
 
 ];

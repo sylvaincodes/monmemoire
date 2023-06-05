@@ -1,0 +1,27 @@
+.pagination{
+    display: flex;
+    font-size: 2rem;
+    border: 1px solid black;
+    height: max-content;
+    border-radius: 5px;
+    padding-inline: 2rem;
+    font-weight: bold;
+    background: rgb(204, 203, 203);
+}
+
+.pagination li a{
+  color: black;
+}
+
+.pagination li {
+    padding-inline: 2rem;
+    padding-block: 0.3rem;
+}
+
+.pagination li.active {
+    background:var(--first-color);
+}
+
+.pagination li.active a{
+    color: rgb(255, 255, 255);
+}

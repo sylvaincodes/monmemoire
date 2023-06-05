@@ -30,4 +30,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'firebase' => [
+        'api_key' => 'AIzaSyCr-ogqkeMUOI3Gy9J1bYANotlz7iLFP2E',
+        'auth_domain' => 'monmemoire-61a0d.firebaseapp.com',
+        'database_url' => 'https://monmemoire-61a0d-default-rtdb.firebaseio.com/',
+        'project_id' => 'monmemoire-61a0d',
+        'storage_bucket' => 'monmemoire-61a0d.appspot.com"',
+        'messaging_sender_id' => '21839538455',
+        'app_id' => '1:21839538455:web:0fb854977296c0ad61ef52',
+        'measurement_id' => 'G-C7ZX6E578C',
+    ],
+    
+
 ];

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Front\FrontController;
+use App\Http\Repositories\DocumentRepository;
+use App\Http\Repositories\FiliereRepository;
+use App\Models\Telechargement;
 
 class HomeController extends FrontController
 {
@@ -12,10 +15,12 @@ class HomeController extends FrontController
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(DocumentRepository $documentRepository, FiliereRepository $filiereRepository)
     {
-        // $this->middleware('auth');
+        $this->DocumentRepository = $documentRepository;
+        $this->FiliereRepository = $filiereRepository;
     }
+
 
     /**
      * Show the application dashboard.
@@ -24,6 +29,9 @@ class HomeController extends FrontController
      */
     public function index()
     {
-        return view('front.home');
+        $documents = $this->DocumentRepository->documentsUser(\Auth::user()->id);
+        return view('front.home', compact('documents'));
     }
+
+   
 }

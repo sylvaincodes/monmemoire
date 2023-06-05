@@ -17,9 +17,8 @@ class FrontMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-
-        if (Auth::user() ) { //si l'utilsateur est connecté et est un user de front alors go
-            if ( Auth::user()->type=="internaute") {
+        if (Auth::user()) { //si l'utilsateur est connecté et est un user de front alors go
+            if (Auth::user()->type == "internaute") {
                 return $next($request);
             }
             return redirect()->route('back.home');

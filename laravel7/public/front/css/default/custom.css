@@ -80,6 +80,7 @@ input[type="checkbox"]{
     width:100%;
     font-size: 2rem;
     padding-inline-end: 3rem;
+    padding-block: 1.5rem;
 }
 .input-group .textarea{
     width: -webkit-fill-available;
@@ -255,6 +256,9 @@ select:active,select:focus{
 .m-x-1{
     margin-inline:1rem
 }
+.m-x-2{
+    margin-inline:2rem
+}
 .m-y-1{
     margin-block:1rem
 }
@@ -333,6 +337,10 @@ select:active,select:focus{
     padding-block: 1rem;
 }
 
+.py-3{
+    padding-block: 3rem;
+}
+
 /* Backgrounds && colors*/
 .bg-white{
     background:white;
@@ -391,7 +399,7 @@ select:active,select:focus{
     padding : 1rem 1.5rem;
     align-items:center;
     justify-content:center;
-    text-align :center;
+    text-align :left;
     font-weight:100;
 }
 
@@ -723,6 +731,7 @@ select:active,select:focus{
     color: var(--black);
     right: 0;
     box-shadow: var(--shadow);
+    width: max-content;
 }
 
 .dropdown .dropdown-menu .nav-item:hover .nav-link{
@@ -852,4 +861,35 @@ iframe {
 .row{
     display: flex;
     flex-direction: row;
+}
+.badge{
+    padding-inline: 1rem;
+    color: #ffffff !important;
+}
+
+.bg-success{
+    background: var(--first-color)
+}
+
+.bg-danger{
+    background: red;
+}
+
+.bg-warning{
+    background: yellow;
+}
+
+.easy-autocomplete{
+    width: 100% !important;
+    border: 1px solid silver;
+    padding-block: 0.1rem;
+}
+.easy-autocomplete input{
+    width: 100% !important;
+    padding: 0.8rem;
+    border: none;
+    outline: none;
+}
+.easy-autocomplete-container{
+    top: 5rem;
 }

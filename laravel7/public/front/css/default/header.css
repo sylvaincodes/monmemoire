@@ -15,7 +15,7 @@ header.fixed{
 
 .header-container{
     padding-inline: var(--padding-inline-20);
-    /* padding-block: var(--padding-block-10); */
+    padding-block: var(--padding-block-10);
     box-shadow: var(--shadow-3);
     display: flex;
     justify-content: space-between;
@@ -45,6 +45,7 @@ header.fixed{
 
 .input-box .search-field{
     padding-inline: var(--padding-inline-20);
+    padding-inline-end: var(--padding-inline-40);
     height: 4rem;
     font-size: 2rem;
     color: var(--first-color);

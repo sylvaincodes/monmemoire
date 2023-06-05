@@ -174,7 +174,9 @@ return [
             // App\Providers\BroadcastServiceProvider::class,
             App\Providers\EventServiceProvider::class,
             App\Providers\RouteServiceProvider::class,
-            Mckenziearts\Notify\LaravelNotifyServiceProvider::class
+            Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
+            App\Providers\BladeDirectivesServiceProvider::class,
+            App\Providers\ViewServiceProvider::class,
 
     ],
 

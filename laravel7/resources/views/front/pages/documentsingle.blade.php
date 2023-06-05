@@ -11,7 +11,7 @@
         Profitez d'une lecture agréable et souple.
         @endslot
         @slot('soustitre')
-        Mémoire Licence....
+        Consultation
         @endslot
     @endcomponent
 @endsection
@@ -26,16 +26,11 @@
         <iframe width="100%" height="100%" src="http://docs.google.com/gview?url=<?php echo asset('front/pdfs/example.pdf')?>&embedded=true" frameborder="0"></iframe> --}}
         
             <div class="d-flex flex-column justify-content-center gap-2 p-2 w-100">
-
-                <h5>Conception et réalisation d’un
-                    Système d’information des étudiants
-                    du département informatique</h5>
+                <h5>{{ trim(substr($document->titre,0,250))}}</h5>
                 
                 <fieldset>
                         <legend class="fs-5">Description</legend>
-                        <p class="fs-6"> Conception et réalisation d’un
-                        Système d’information des étudiants
-                        du département informatique</p>
+                        <p class="fs-6"> {{ trim(substr($document->description_courte,0,250))}}</p>
 
                 </fieldset>
         
@@ -44,9 +39,10 @@
                     <legend class="fs-5">Informations complémentaires</legend>
 
                 <ul class="list">
-                    <li > <span >Auteur :</span>  <span > Adande sylvain</span> </li>                    
-                    <li > <span >Publié le :</span>  <span >10 janvier 2023</span> </li>
-                    <li ><span > vues :</span> <span >500</span> </li>
+                    <li > <span >Auteur :</span>  <span > {{ trim($document->nom_auteur)}}
+                        {{ trim($document->prenom_auteur)}}</span> </li>                    
+                    <li > <span >Publié le :</span>  <span >{{date('d-m-Y h:i', strtotime($document->created_at))}}</span> </li>
+                    <li ><span > vues :</span> <span >{{ $document->vues}}</span> </li>
                     <li></li>
                 </ul>
                
@@ -54,9 +50,9 @@
                 
             </fieldset>
             
-            <a href="#">
+            <a href="{{ route('front.downloadDocument', $document->id)}}">
                 <i title="icon-lg télécharger le document" class="icon-sm ri-download-2-line"></i> 
-                <span class="fs-6 text-link">
+                <span  class="fs-6 text-link">
                     Télécharger le document.
                 </span>
             </a>

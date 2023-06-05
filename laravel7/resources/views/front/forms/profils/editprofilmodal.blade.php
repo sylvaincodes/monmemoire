@@ -10,7 +10,10 @@
             <form class="d-flex flex-wrap gap-3" method="post" action="{{ route('front.profilUpdate') }}">
                 @csrf
                 @method('PUT')
+
+                <input type="text" name="filiere_id" class="d-block filiere_id" id="filiere_id" placeholder="filiere_id"/>
                 <input type="hidden" name="id" id="user" value="{{Auth::user()->id}}">
+
                 <label class="input-group col-xs-12 col-md-6">
                     <input name="nom" id="nom" type="nom" class="field  @error('nom') is-invalid @enderror" placeholder="nom"  name="email" autocomplete="off" value="{{$user->nom}}">
                     <span class="label">Nom</span>
